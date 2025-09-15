@@ -83,7 +83,7 @@ def run1():
                     val = round(pd.Series(vals).dropna().iat[0], 3)
                     # print(val)
                 except:
-                    val = df_base[col].dropna().sample(1).iat[0]
+                    val = df_base[col].dropna().sample(1, random_state=77).iat[0]
                 # 填充值
                 df_base.loc[datetime, col] = val
 
